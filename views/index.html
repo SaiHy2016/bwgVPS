@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>what</title>
+    <script src='/static/javascripts/jquery-3.2.1.min.js'></script>
+</head>
+<body>
+    <a id="query" href="javascript:;">查询</a>
+    <br><br><br>
+    uid:
+    <input type="text" name="uid"><br>
+    title:
+    <input type="text" name='title'><br>
+    content:
+    <input type="text" name='content'><br>
+    <button id='add'>添加</button>
+    <br>
+    <br>
+    <br>
+    dd:
+    <input type="text" name="dd">
+    <button id="dele">删除</button>
+
+
+
+    <ul id='all'>
+        
+    </ul>
+
+<script type="text/javascript">
+    $('#query').click(()=>{
+         var html = ''
+        $.get('http://127.0.0.1:3000/ajax/getInfo', (data) => {
+            console.log(data)
+            $.each(data,(i,v)=>{
+               html += `<li>id: ${v._id} <br> uid: ${v.uid} <br>  title: ${v.title}  <br>  content: ${v.content}  <br> creatTime:  ${v.creatTime}</li>`
+            }) 
+
+            $('#all').html(html)
+        })
+    })
+    $('#add').click(()=>{
+        var data={
+            uid: $('input[name="uid"]').val(),
+            title:$('input[name="uid"]').val(),
+            content:$('input[name="content"]').val()
+        }
+        $.post('http://127.0.0.1:3000/ajax/addInfo',data,(data)=>{
+            alert(data)
+            console.log(data)
+        })
+    })
+
+    $('#dele').click(()=>{
+        var data={
+            uid:$('input[name="dd"]').val().trim()
+        }
+        $.post('http://127.0.0.1:3000/ajax/deleInfo',data,(d)=>{
+            alert(d)
+            console.log(d)
+        })
+    })
+    
+</script>
+</body>
+</html>
