@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.container {
+  max-width: 666px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container .lists li {
+  display: inline-block;
+}
+
+.container .lists li.r {
+  background-image: -webkit-linear-gradient(top, #d9534f 0, #c12e2a 100%);
+}
+
+.container .lists li.r a {
+  color: #fefefe;
+}

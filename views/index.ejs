@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?=title?></title>
+    <link rel="stylesheet" href="/static/font/iconfont.css">
+    <link rel="stylesheet" href="/static/css/index.min.css">
 </head>
 <body>
-    <div>
+    <div class='bg'>
         <div class='container'>
             <? if(lists.length){?>
-                <ul>
+                <ul class='lists'>
                 <?lists.forEach((v)=>{?>
-                    <li><?=v?></li>
+                    <li class='r'><a href='<?=v.url?>'><?=v.name?></li></a>
                 <?}) ?>
                 </ul>
             <?}?>
         </div>
     </div>
-    <? include footer?>
     
     <script src='/static/js/jquery-3.2.1.min.js'></script>
 </body>
