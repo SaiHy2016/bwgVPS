@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><?=title?></title>
+</head>
+<body>
+    <div>
+        <div class='container'>
+            <? if(lists.length){?>
+                <ul>
+                <?lists.forEach((v)=>{?>
+                    <li><?=v?></li>
+                <?}) ?>
+                </ul>
+            <?}?>
+        </div>
+    </div>
+    <? include footer?>
+    
+    <script src='/static/js/jquery-3.2.1.min.js'></script>
+</body>
+</html>
